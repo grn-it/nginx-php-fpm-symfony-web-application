@@ -34,8 +34,8 @@ To solve this problem, [ACL](https://en.wikipedia.org/wiki/Access-control_list) 
 
 Permission is issued using these commands:  
 ```bash
-setfacl -dR -m u:$(uid):w .
-setfacl -R -m u:$(uid):w .
+setfacl -dR -m u:$(uid):rwX .
+setfacl -R -m u:$(uid):rwX .
 ```
 
 `$(uid)` is user id that was automatically obtained when running Symfony Web Application install command in step 4.  
@@ -55,8 +55,8 @@ setfacl -R -m u:www-data:rwX var
 Also in future you may need write permissions to `public` folder to save files received from user.  
 For this, following commands were executed:
 ```bash
-setfacl -dR -m u:www-data:w public
-setfacl -R -m u:www-data:w public
+setfacl -dR -m u:www-data:rwX public
+setfacl -R -m u:www-data:rwX public
 ```
 
 ### Nginx and Symfony Web Application
