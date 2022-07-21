@@ -12,7 +12,6 @@ COPY docker/nginx/conf.d/nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /app/public
 CMD ["nginx", "-g", "daemon off;"]
 
-
 ## PHP-FPM
 FROM php:fpm-alpine AS php_fpm
 
@@ -28,11 +27,8 @@ RUN set -eux; \
 	)"; \
 	apk add --no-cache --virtual .phpexts-rundeps $runDeps; \
 	apk del .build-deps
-
 RUN ln -s $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 COPY docker/php-fpm/conf.d/php.prod.ini $PHP_INI_DIR/conf.d/php.prod.ini
 COPY docker/php-fpm/php-fpm.d/php-fpm.conf /usr/local/etc/php-fpm.d/php-fpm.conf
-
 WORKDIR /app
-
 CMD ["php-fpm"]
