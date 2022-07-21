@@ -38,7 +38,7 @@ setfacl -dR -m u:$(uid):w .
 setfacl -R -m u:$(uid):w .
 ```
 
-`$(uid)` is the user id that was automatically obtained when running the Symfony Web Application install command in step 4.  
+`$(uid)` is user id that was automatically obtained when running the Symfony Web Application install command in step 4.  
 After executing this command, home user of host machine will be given permissions to read, edit and execute existing and future files located in project directory.
 
 ### PHP-FPM and Symfony Web Application
