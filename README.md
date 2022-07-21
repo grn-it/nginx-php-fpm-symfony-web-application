@@ -44,7 +44,7 @@ After executing this command, home user of host machine will be given permission
 ### PHP-FPM and Symfony Web Application
 User in Symfony Web Application container is `root`.  
 User under which PHP-FPM works is `www-data`.  
-User `www-data` needs to give rights to read, edit and execute for `var` directory, in which log and cache files are located, otherwise there will be a write permission error in this folder and application will not start.  
+User `www-data` needs to give rights to read, edit and execute for `var` directory, in which log and cache files are located, otherwise there will be a write permission error and application will not start.  
 
 To solve this problem following commands were executed:
 ```bash
