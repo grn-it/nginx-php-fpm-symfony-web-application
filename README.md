@@ -22,7 +22,7 @@ docker-compose exec symfony-web-application make install uid=$(id -u)
 
 <br>
 
-## How problem with the rights to read, edit and execute files was solved
+## How problem with rights to read, edit and execute files was solved
 
 ### Host and Symfony Web Application
 User inside the Symfony Web Application container and on host machine (outside the container) are in most cases different.  
