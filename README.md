@@ -30,7 +30,7 @@ Inside Symfony Web Application container `root` user is used.
 On host machine usually work under home user.  
 
 Once Symfony Web Application is installed user on host machine will not be able to edit files, because they are owned by `root`.  
-To solve this problem, [ACL](https://en.wikipedia.org/wiki/Access-control_list) is used, which gives permission to the home user of the host machine to edit files that do not belong to him (because they belong to `root`).
+To solve this problem, [ACL](https://en.wikipedia.org/wiki/Access-control_list) is used, which gives permission to home user of host machine to edit files that do not belong to him (because they belong to `root`).
 
 Permission is issued using these commands:  
 ```bash
