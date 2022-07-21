@@ -24,6 +24,9 @@ docker-compose exec symfony-web-application make install uid=$(id -u)
 
 ## Setting file permissions for reading, writing and executing
 
+Explains how permissions for Nginx, PHP-FPM, Symfony Web Application containers were configured in this project.  
+No action required.
+
 ### Host and Symfony Web Application
 User inside the Symfony Web Application container and on host machine (outside the container) are in most cases different.  
 Inside Symfony Web Application container `root` user is used.  
@@ -32,7 +35,7 @@ On host machine usually work under home user.
 Once Symfony Web Application is installed, user on host machine will not be able to write files, because they are owned by `root`.  
 To solve this problem, [ACL](https://en.wikipedia.org/wiki/Access-control_list) is used, which gives permission to home user of host machine to write files that do not belong to him (because they belong to `root`).
 
-Permission is issued using these commands:  
+Permissions are granted by these commands:  
 ```bash
 setfacl -dR -m u:$(uid):rwX .
 setfacl -R -m u:$(uid):rwX .
@@ -46,14 +49,14 @@ User in Symfony Web Application container is `root`.
 User under which PHP-FPM works is `www-data`.  
 User `www-data` needs to give permissions to read, write and execute for `var` directory, in which log and cache files are located.  
 
-To solve this problem following commands were executed:
+Permissions are granted by these commands:
 ```bash
 setfacl -dR -m u:www-data:rwX var
 setfacl -R -m u:www-data:rwX var
 ```
 
 Also need permissions to `public` folder to execute `index.php` and to save files received from user.  
-For this, following commands were executed:
+Permissions are granted by these commands:
 ```bash
 setfacl -dR -m u:www-data:rwX public
 setfacl -R -m u:www-data:rwX public
