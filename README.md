@@ -52,8 +52,8 @@ setfacl -dR -m u:www-data:rwX var
 setfacl -R -m u:www-data:rwX var
 ```
 
-Also in future you may need write permissions to `public` folder to save files received from the user.  
-For this, the following commands were executed:
+Also in future you may need write permissions to `public` folder to save files received from user.  
+For this, following commands were executed:
 ```bash
 setfacl -dR -m u:www-data:w public
 setfacl -R -m u:www-data:w public
