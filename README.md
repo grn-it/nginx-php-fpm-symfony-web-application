@@ -64,6 +64,6 @@ User running in Symfony Web Application container is `root`.
 User under which Nginx is running is `nginx`.  
 `nginx` user only needs read access to files in `public` directory.  By default all users have read permissions for `public` directory, so no additional permissions are required.  
 
-Permissions editing commands are located in [Makefile](https://github.com/grn-it/nginx-php-fpm-symfony-web-application/blob/main/Makefile).
+Сommands for setting permissions are located in [Makefile](https://github.com/grn-it/nginx-php-fpm-symfony-web-application/blob/main/Makefile).
 
 More details in Symfony documentation [Setting up or Fixing File Permissions](https://symfony.com/doc/current/setup/file_permissions.html)
