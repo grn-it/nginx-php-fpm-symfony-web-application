@@ -22,7 +22,7 @@ docker-compose exec symfony-web-application make install uid=$(id -u)
 
 <br>
 
-## How problem with rights to read, write and execute files was solved
+## Setting file permissions for reading, writing and executing
 
 ### Host and Symfony Web Application
 User inside the Symfony Web Application container and on host machine (outside the container) are in most cases different.  
@@ -44,7 +44,7 @@ After executing this command, home user of host machine will be given permission
 ### PHP-FPM and Symfony Web Application
 User in Symfony Web Application container is `root`.  
 User under which PHP-FPM works is `www-data`.  
-User `www-data` needs to give rights to read, write and execute for `var` directory, in which log and cache files are located.  
+User `www-data` needs to give permissions to read, write and execute for `var` directory, in which log and cache files are located.  
 
 To solve this problem following commands were executed:
 ```bash
