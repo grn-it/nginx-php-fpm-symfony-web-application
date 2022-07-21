@@ -1,6 +1,5 @@
 ## Symfony Web Application
 FROM composer:latest AS symfony-web-application
-
 RUN apk add --no-cache bash && \
     curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' | bash && \
     apk add symfony-cli acl
@@ -14,7 +13,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## PHP-FPM
 FROM php:fpm-alpine AS php_fpm
-
 RUN set -eux; \
 	apk add --no-cache --virtual .build-deps $PHPIZE_DEPS icu-dev libzip-dev zlib-dev; \
 	docker-php-ext-configure zip; \
