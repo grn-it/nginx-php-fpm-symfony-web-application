@@ -24,7 +24,7 @@ docker-compose exec symfony-web-application make install uid=$(id -u)
 
 ## Setting file permissions for reading, writing and executing
 
-Explains how permissions for Nginx, PHP-FPM, Symfony Web Application containers were configured in this project.  
+Explains how permissions for Nginx, PHP-FPM, Symfony Web Application containers were set in this project.  
 No action required.
 
 ### Host and Symfony Web Application
