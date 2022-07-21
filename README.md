@@ -34,8 +34,8 @@ To solve this problem, [ACL](https://en.wikipedia.org/wiki/Access-control_list) 
 
 Permission is issued using these commands:  
 ```bash
-setfacl -dR -m u:$(uid):rw .
-setfacl -R -m u:$(uid):rw .
+setfacl -dR -m u:$(uid):w .
+setfacl -R -m u:$(uid):w .
 ```
 
 `$(uid)` is the user id that was automatically obtained when running the Symfony Web Application install command in step 4.  
