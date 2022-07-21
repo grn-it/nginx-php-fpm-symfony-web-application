@@ -52,7 +52,7 @@ setfacl -dR -m u:www-data:rwX var
 setfacl -R -m u:www-data:rwX var
 ```
 
-Also in future you may need write permissions to `public` folder to save files received from user.  
+Also need permissions to `public` folder to execute `index.php` and to save files received from user.  
 For this, following commands were executed:
 ```bash
 setfacl -dR -m u:www-data:rwX public
