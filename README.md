@@ -1,6 +1,6 @@
 # Nginx, PHP-FPM, Symfony Web Application
 
-The project contains configured and ready to use Nginx, PHP-FPM, Symfony Web Application split into docker containers.
+Project contains configured and ready to use Nginx, PHP-FPM, Symfony Web Application split into docker containers.
 
 ## How To Use
 1. Clone this repository
